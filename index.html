@@ -697,6 +697,11 @@
 
       </div>
       
+
+    </div>
+
+     
+
       
 
 
@@ -709,7 +714,7 @@
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => window.location.pathname = ('/portfolio/submit_page.html')) //alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+      .then(response => window.location.pathname = ('/portfolio/submit_page.html')) 
       .catch(error => console.error('Error!', error.message))
   })
   
@@ -721,8 +726,8 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Kaushik Chakraborty</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      
+     
       <div class="social-links">
         <a href="https://twitter.com/kaushikc04" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="https://www.facebook.com/kaushikc04" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -738,7 +743,7 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: [license-url] -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
-        Designed by Kaushik
+        Designed by <b>Kaushik Chakraborty</b>
       </div>
     </div>
   </footer><!-- End Footer -->
