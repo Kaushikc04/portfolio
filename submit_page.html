@@ -8,24 +8,41 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="icon" type="image/X-icon" href="code.png">
  <style>
-  .button{
-    background-color:grey;
-    height: 25px;
-    border-radius: 4px;
-    cursor: pointer;
 
-  }
+  .button{
+    background-color:#0563bb;
+    height: 40px;
+    width: 130px; 
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-size:medium;
+  
+}
+
  </style>
+
+<script type="text/javascript">
+  window.history.forward();
+  function noBack() {
+      window.history.forward();
+  }
+</script>
+
     <body>
 <center> 
     <br>
    <img src="logo_submit icon.jpg" height="225" width="225" alt="" srcset="">   
     <h1>Message received. Thanks!</h1>
-
     <h2>I'll be in touch with you shortly.</h2>
 <br>
-    <button class ="button"><a href="index.html">Back to Home</a></button>
-      
-</center>
+<br>
+    <button class ="button" onclick="window.location.href='index.html';">Back to Home</button>
+
+</center> 
+
 </body>
 </html>
+
+
