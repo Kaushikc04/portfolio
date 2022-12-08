@@ -326,9 +326,11 @@
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => alert("Click Ok to Send"))
-      .then(response => window.location.pathname=('/portfolio/submit_page.html'))
-      .catch(error => console.error('Error!', error.message))
+     
+    location.assign("/portfolio/submit_page.html")
+
+    form.reset();
+    
   })
 
 
