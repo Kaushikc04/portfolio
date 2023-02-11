@@ -77,6 +77,8 @@
   <main id="main">
 
     <!-- ======= About Section ======= -->
+   
+    
     <section id="about" >
       <div class="section-title">
       <h2>About</h2>
@@ -255,101 +257,114 @@
     </section>
     <!-- End Resume Section -->
 
+    
+   <!-- ======= Contact Section ======= -->
+   <section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+      </div>
+
+      <div class="row mt-1">
+
+        <div class="col-lg-4">
+          <div class="info">
+            <div class="address">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location:</h4>
+              <p>Kolkata, West Bengal, IN</p>
+            </div>
 
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
+            <div class="email">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+              <p>kaushikc2002@gmail.com</p>
+            </div>
 
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
-
-        <div class="row mt-1">
-
-          <div class="col-lg-4">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Kolkata, West Bengal, IN</p>
-              </div>
-
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>kaushikc2002@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Connect:</h4>
-                <p>skype: live:.cid.79a4dc6dc50345d6</p>
-              </div>
-
+            <div class="phone">
+              <i class="bi bi-phone"></i>
+              <h4>Connect:</h4>
+              <p>skype: live:.cid.79a4dc6dc50345d6</p>
             </div>
 
           </div>
 
-          <div class="col-lg-8 mt-5 mt-lg-0">
+        </div>
+
+        <div class="col-lg-8 mt-5 mt-lg-0">
 
 
-            <form name="google-sheet" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-
-
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
+          <form name="google-sheet" role="form" class="php-email-form">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+
+
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
               </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="my-3">
 
 
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+            </div>
+            <div class="text-center">
+              <button id="submit-button" type="submit">Send Message</button>
+              <div id="loading-animation" style="display: none;">Loading...</div>
+            </div>
 
-              <br>
-            </form>
-
-          </div>
+            <br>
+          </form>
 
         </div>
 
       </div>
 
-
-      </div>
-
+    </div>
 
 
-      <script>
+    </div>
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzLjzkQeWRLGpWi1szh9AFS0VFLWRiJBq3oSGVuBRw1yAlOmw3pobI__8XattHqrFrA/exec'
-        const form = document.forms['google-sheet']
-
-        form.addEventListener('submit', e => {
-          e.preventDefault()
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzLjzkQeWRLGpWi1szh9AFS0VFLWRiJBq3oSGVuBRw1yAlOmw3pobI__8XattHqrFrA/exec'
+      const form = document.forms['google-sheet']
+      const submitButton = document.querySelector('button[type="submit"]');
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        submitButton.innerHTML = 'Sending...';
+        submitButton.style.backgroundColor = 'grey';
+        submitButton.style.cursor = 'wait';
+    
+        setTimeout(() => {
           fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-
-          location.assign("/portfolio/submit_page.html")
-
-          form.reset();
-
-        })
-
-
-      </script>
-    </section><!-- End Contact Section -->
+          .then(response => {
+            submitButton.innerHTML = 'Sent!';
+            submitButton.style.backgroundColor = 'green';
+            submitButton.style.cursor = 'default';
+            location.assign("/portfolio/submit_page.html");
+            form.reset();
+          })
+          .catch(error => {
+            submitButton.innerHTML = 'Error :(';
+            submitButton.style.backgroundColor = 'red';
+            submitButton.style.cursor = 'default';
+            console.error('Error!', error.message);
+          });
+        }, 2000);
+      });
+    </script>
+ 
+    <!-- End Contact Section -->
 
   </main><!-- End #main -->
 
