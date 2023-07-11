@@ -49,7 +49,7 @@
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="/portfolio/" target="_blank"  rel="noopener noreferrer" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+        <li><a href="/portfolio/resume.pdf" target="_blank"  rel="noopener noreferrer" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
         
         <!-- <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li> -->
         <!-- <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> -->
@@ -65,11 +65,14 @@
       <h1>Kaushik Chakraborty</h1>
       <p>I'm <span class="typed" data-typed-items="Developer,Freelancer,"></span></p>
       <div class="social-links">
-        <a href="https://twitter.com/kaushikc04" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://twitter.com/kaushikc_04" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="https://www.facebook.com/kaushikc04" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="https://www.instagram.com/kaushikc04/" class="instagram"><i class="bx bxl-instagram"></i></a>
         <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
         <a href="https://www.linkedin.com/in/kaushikc04/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <!-- <a href="https://open.spotify.com/user/31zmpwm3hdiwpdhbobreyz423jda"> profile url -->
+          <a href="https://linktr.ee/kaushikc04" class="bi bi-three-dots">
+          </a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -77,8 +80,7 @@
   <main id="main">
 
     <!-- ======= About Section ======= -->
-   
-    
+
     <section id="about" >
       <div class="section-title">
       <h2>About</h2>
@@ -87,7 +89,7 @@
       <div style="width: 100%;">
         <div style="padding: 15px;">
           <div style="width:auto;">
-            <img  src="pic.jpg" width="200px" >
+            <img class="profile" src="pic.jpg" width="200px" >
             
           </div>
          <br>
@@ -115,6 +117,26 @@
         img{
           position: center;
         }
+        
+
+    
+  .profile {
+    border-radius: 50%;
+    animation: sparkle ;
+    animation-duration: 5s;
+
+  }
+  
+  @keyframes sparkle {
+    10% {
+      box-shadow: 0 0 0 0 rgb(0, 132, 255);
+    }
+    100% {
+      box-shadow: 0 0 10px 5px rgba(0, 255, 234, 0.822);
+   
+  }
+  }
+
       </style>
     </div>
     </div>
@@ -257,7 +279,7 @@
     </section>
     <!-- End Resume Section -->
 
-    
+
    <!-- ======= Contact Section ======= -->
    <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">
@@ -335,35 +357,9 @@
     </div>
 
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbzLjzkQeWRLGpWi1szh9AFS0VFLWRiJBq3oSGVuBRw1yAlOmw3pobI__8XattHqrFrA/exec'
-      const form = document.forms['google-sheet']
-      const submitButton = document.querySelector('button[type="submit"]');
-    
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        submitButton.innerHTML = 'Sending...';
-        submitButton.style.backgroundColor = 'grey';
-        submitButton.style.cursor = 'wait';
-    
-        setTimeout(() => {
-          fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-          .then(response => {
-            submitButton.innerHTML = 'Sent!';
-            submitButton.style.backgroundColor = 'green';
-            submitButton.style.cursor = 'default';
-            location.assign("/portfolio/submit_page.html");
-            form.reset();
-          })
-          .catch(error => {
-            submitButton.innerHTML = 'Error :(';
-            submitButton.style.backgroundColor = 'red';
-            submitButton.style.cursor = 'default';
-            console.error('Error!', error.message);
-          });
-        }, 2000);
-      });
-    </script>
  
+     </script>
+  
     <!-- End Contact Section -->
 
   </main><!-- End #main -->
@@ -374,11 +370,13 @@
 
 
       <div class="social-links">
-        <a href="https://twitter.com/kaushikc04" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://twitter.com/kaushikc_04" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="https://www.facebook.com/kaushikc04" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="https://www.instagram.com/kaushikc04/" class="instagram"><i class="bx bxl-instagram"></i></a>
         <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
         <a href="https://www.linkedin.com/in/kaushikc04/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://linktr.ee/kaushikc04" class="bi bi-three-dots"> 
+        </a>
       </div>
       <div class="copyright">
         &copy; Copyright <strong><span>2022</span></strong>. All Rights Reserved
