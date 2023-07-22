@@ -110,7 +110,7 @@
       </div>
     
 
-      <style>
+      <!-- <style>
         img {
           border-radius: 50%;
         }
@@ -137,10 +137,39 @@
   }
   }
 
+      </style> -->
+      <style>
+        .profile {
+          border-radius: 50%;
+          animation: sparkle 5s infinite;
+          /* Adding the linear gradient background */
+          background: linear-gradient(to right, 
+            rgba(59, 173, 227, 1) 20%, 
+            rgba(87, 111, 230, 1) 40%, 
+            rgba(152, 68, 183, 1) 100%, 
+            rgba(255, 53, 127, 1) 25%
+          );
+        }
+      
+        @keyframes sparkle {
+          0%, 100% {
+            box-shadow: 0 0 0 0 rgba(0, 132, 255, 0.822);
+          }
+          10% {
+            box-shadow: 0 0 0 5px rgb(0, 132, 255); /* Smaller shadow */
+          }
+          50% {
+            box-shadow: 0 0 0 2px rgba(0, 255, 234, 0.822); /* Smaller shadow */
+          }
+          90% {
+            box-shadow: 0 0 0 5px rgba(0, 255, 234, 0.822); /* Smaller shadow */
+          }
+        }
       </style>
     </div>
     </div>
-
+    <br>
+ <hr>
     <!-- End About Section -->
 
 
