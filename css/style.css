@@ -1080,6 +1080,8 @@ section {
 .contact .php-email-form {
   width: 100%;
   background: #fff;
+
+
 }
 
 .contact .php-email-form .form-group {
@@ -1235,4 +1237,19 @@ section {
 
 #footer .credits {
   font-size: 13px;
+}
+
+/* styles.css */
+hr {
+  /* Linear gradient */
+  background: linear-gradient(to right, 
+    rgba(59, 173, 227, 1) 20%, 
+    rgba(87, 111, 230, 1) 40%, 
+    rgba(152, 68, 183, 1) 100%, 
+    rgba(255, 53, 127, 1) 25%
+  );
+  /* Set the height and other styling if needed */
+  height: 2px; /* Adjust the height as needed */
+  border: none; /* Remove the default border */
+  margin: 10px 0; /* Add some margin for spacing */
 }
